@@ -53,42 +53,42 @@ export const portfolioData = {
     {
       title: "Modular Building Design Tool",
       description: "A web-based 3D tool for designing modular buildings with drag-and-drop interface, Three.js visualizations, and PDF export functionality.",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "/images/backgrounds/projects/modular-build-tool.png",
       technologies: ["React.js", "TypeScript", "Three.js", "Redux"],
       link: "#"
     },
     {
       title: "BAXE Global Platform",
       description: "Cross-border payment system and social platform supporting 190+ countries with real-time chat and secure transaction workflows.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "/images/backgrounds/projects/baxe.png",
       technologies: ["React.js", "TypeScript", "Getstream", "Bootstrap"],
       link: "#"
     },
     {
       title: "Asset Management Tool",
       description: "Full-stack solution for tracking IT and non-IT assets with inventory management, approval workflows, and analytics dashboards.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "/images/backgrounds/projects/asset-tool.png",
       technologies: ["React.js", "Material UI", "Chart.js", "REST APIs"],
       link: "#"
     },
     {
       title: "ShopSight Admin Portal",
       description: "Admin interface for retail branding and analytics with real-time dashboards, built using Next.js and ECharts visualization.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "/images/backgrounds/projects/shop-sight.png",
       technologies: ["Next.js", "Tailwind CSS", "ECharts", "TypeScript"],
       link: "#"
     },
     {
       title: "USACS Shift Optimization",
       description: "Web-based scheduling system for acute care hospitals with shift visualization, business rules, and Okta authentication integration.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "/images/backgrounds/projects/shift-opt-tool.png",
       technologies: ["React.js", "Material UI", "jsPDF", "Okta Auth"],
       link: "#"
     },
     {
       title: "NASSCOM SME Awards Portal",
       description: "Award nomination and evaluation platform for MSMEs with responsive workflows, evaluation dashboards, and tracking systems.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "/images/backgrounds/projects/award-portal.png",
       technologies: ["React.js", "TypeScript", "Material UI", "REST APIs"],
       link: "#"
     }

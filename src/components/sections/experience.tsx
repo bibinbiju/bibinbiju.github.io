@@ -1,18 +1,19 @@
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import TimelineItem from "@/components/ui/timeline-item";
 import { portfolioData } from "@/data/portfolio-data";
+import Image from "next/image";
 
 export default function Experience() {
   return (
     <section id="experience" className="py-20 relative">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Abstract digital technology network" 
-          className="w-full h-full object-cover opacity-10" 
-        />
-      </div>
+      <Image
+        src="/images/backgrounds/experience.png"
+        alt="Abstract digital technology network"
+        fill
+        className="object-cover opacity-10 z-0"
+        priority
+      />
 
       <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal>

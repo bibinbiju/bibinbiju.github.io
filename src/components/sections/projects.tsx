@@ -1,18 +1,19 @@
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import ProjectCard from "@/components/ui/project-card";
 import { portfolioData } from "@/data/portfolio-data";
+import Image from "next/image";
 
 export default function Projects() {
   return (
     <section id="projects" className="py-20 relative">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Code on multiple screens in dark environment" 
-          className="w-full h-full object-cover opacity-10" 
-        />
-      </div>
+      <Image
+        src="/images/backgrounds/project.png"
+        alt="Code on multiple screens in dark environment"
+        fill
+        className="object-cover opacity-10 z-0"
+        priority
+      />
 
       <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal>

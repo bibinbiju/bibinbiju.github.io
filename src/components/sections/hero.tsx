@@ -2,89 +2,94 @@ import { motion } from "framer-motion";
 import { Download, Mail, Linkedin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import Image from "next/image";
 
 export default function Hero() {
   const handleDownloadResume = () => {
     // Create a downloadable resume link
-    const link = document.createElement('a');
-    link.href = '/resume/Bibin_B_Resume.pdf'; // This would be served from public folder
-    link.download = 'Bibin_B_Resume.pdf';
+    const link = document.createElement("a");
+    link.href = "/resume/Bibin_B_Resume.pdf"; // This would be served from public folder
+    link.download = "Bibin_B_Resume.pdf";
     link.click();
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Modern professional workspace" 
-          className="w-full h-full object-cover opacity-20" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-900/20 to-indigo-900/30"></div>
-      </div>
-      
+
+      <Image
+        src="/images/backgrounds/hero.png"
+        alt="Modern professional workspace"
+        fill
+        className="object-cover opacity-20 z-0"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-900/20 to-indigo-900/30" />
+
       {/* Floating Particles */}
       <div className="absolute inset-0 z-10">
-        <motion.div 
+        <motion.div
           className="particle w-2 h-2 absolute top-1/4 left-1/4"
           animate={{
             y: [0, -100, 0],
             rotate: [0, 180, 360],
-            opacity: [1, 0.5, 1]
+            opacity: [1, 0.5, 1],
           }}
           transition={{
             duration: 4,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="particle w-3 h-3 absolute top-1/3 right-1/4"
           animate={{
             y: [0, -100, 0],
             rotate: [0, 180, 360],
-            opacity: [1, 0.5, 1]
+            opacity: [1, 0.5, 1],
           }}
           transition={{
             duration: 4,
             delay: 1,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="particle w-2 h-2 absolute bottom-1/4 left-1/3"
           animate={{
             y: [0, -100, 0],
             rotate: [0, 180, 360],
-            opacity: [1, 0.5, 1]
+            opacity: [1, 0.5, 1],
           }}
           transition={{
             duration: 4,
             delay: 2,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="particle w-4 h-4 absolute top-1/2 right-1/3"
           animate={{
             y: [0, -100, 0],
             rotate: [0, 180, 360],
-            opacity: [1, 0.5, 1]
+            opacity: [1, 0.5, 1],
           }}
           transition={{
             duration: 4,
             delay: 3,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
       </div>
 
       <div className="container mx-auto px-6 text-center z-20 relative">
-        <motion.div 
+        <motion.div
           className="glass-enhanced rounded-3xl p-8 md:p-12 max-w-5xl mx-auto"
           initial={{ y: 100, opacity: 0, scale: 0.8 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -92,18 +97,23 @@ export default function Hero() {
           whileHover={{ scale: 1.02 }}
         >
           <ScrollReveal>
-            <motion.h1 
+            <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
               initial={{ scale: 0.8, rotateX: -20 }}
               animate={{ scale: 1, rotateX: 0 }}
-              transition={{ duration: 1, delay: 0.3, type: "spring", damping: 15 }}
+              transition={{
+                duration: 1,
+                delay: 0.3,
+                type: "spring",
+                damping: 15,
+              }}
             >
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-extrabold">
                 Bibin B
               </span>
             </motion.h1>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 text-muted-foreground"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -111,17 +121,18 @@ export default function Hero() {
             >
               Senior Software Engineer | Frontend JavaScript Specialist
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="text-base sm:text-lg md:text-xl mb-10 text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              6+ years of experience crafting scalable, performant web applications with React.js, TypeScript, and Next.js
+              6+ years of experience crafting scalable, performant web
+              applications with React.js, TypeScript, and Next.js
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -145,7 +156,7 @@ export default function Hero() {
                   Download Resume
                 </Button>
               </motion.div>
-              
+
               <div className="flex space-x-4">
                 <motion.a
                   href="mailto:bibinvakkom@gmail.com"
@@ -155,7 +166,7 @@ export default function Hero() {
                 >
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://www.linkedin.com/in/bibin-b-biju-542583154"
                   target="_blank"
@@ -166,7 +177,7 @@ export default function Hero() {
                 >
                   <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </motion.a>
-                
+
                 <motion.a
                   href="tel:+919048778629"
                   className="glass w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"

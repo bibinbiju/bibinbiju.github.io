@@ -3,18 +3,19 @@ import { Code, Bolt } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import SkillBar from "@/components/ui/skill-bar";
 import { portfolioData } from "@/data/portfolio-data";
+import Image from "next/image";
 
 export default function Skills() {
   return (
     <section id="skills" className="py-20 relative">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Modern technology and programming concept" 
-          className="w-full h-full object-cover opacity-10" 
-        />
-      </div>
+      <Image
+        src="/images/backgrounds/skill.png"
+        alt="Modern technology and programming concept"
+        fill
+        className="object-cover opacity-10 z-0"
+        priority
+      />
 
       <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal>
@@ -30,7 +31,7 @@ export default function Skills() {
           {/* Frontend Skills */}
           <ScrollReveal delay={0.2}>
             <div className="glass-enhanced rounded-xl p-6 sm:p-8 h-full">
-              <motion.h3 
+              <motion.h3
                 className="text-2xl font-semibold mb-8 text-primary flex items-center"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -60,7 +61,7 @@ export default function Skills() {
           {/* Tools & Technologies */}
           <ScrollReveal delay={0.4}>
             <div className="glass-enhanced rounded-xl p-6 sm:p-8 h-full">
-              <motion.h3 
+              <motion.h3
                 className="text-2xl font-semibold mb-8 text-secondary flex items-center"
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -81,16 +82,20 @@ export default function Skills() {
                     className="glass rounded-lg p-4 text-center hover:bg-primary/20 transition-all duration-500 transform cursor-pointer"
                     initial={{ opacity: 0, y: 30, scale: 0.8 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: 0.1 * index, type: "spring", damping: 15 }}
-                    whileHover={{ 
-                      scale: 1.1, 
+                    transition={{
+                      delay: 0.1 * index,
+                      type: "spring",
+                      damping: 15,
+                    }}
+                    whileHover={{
+                      scale: 1.1,
                       y: -5,
                       rotateY: 10,
-                      boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
+                      boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <motion.i 
+                    <motion.i
                       className={`${tool.icon} text-2xl ${tool.color} mb-2 block`}
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
