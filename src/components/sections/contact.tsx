@@ -88,7 +88,7 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Ready to bring your ideas to life? Let's discuss your next project
+              Ready to bring your ideas to life? Let&apos;s discuss your next project
               and create something amazing together.
             </p>
           </div>

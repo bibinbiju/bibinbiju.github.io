@@ -23,8 +23,8 @@ export default function Navigation() {
       let current = '';
       
       sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        const sectionTop = (section as HTMLElement).offsetTop;
+        // const sectionHeight = section.clientHeight;
         if (window.scrollY >= (sectionTop - 200)) {
           current = section.getAttribute('id') || '';
         }

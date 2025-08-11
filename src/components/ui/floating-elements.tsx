@@ -24,7 +24,7 @@ export default function FloatingElements() {
         size: Math.random() * 40 + 20,
         duration: Math.random() * 10 + 10,
         color: ['primary', 'secondary', 'accent'][Math.floor(Math.random() * 3)],
-        shape: ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)]
+        shape: (['circle', 'square', 'triangle'] as Array<'circle' | 'square' | 'triangle'>)[Math.floor(Math.random() * 3)]
       });
     }
     setElements(newElements);

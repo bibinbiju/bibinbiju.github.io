@@ -16,7 +16,14 @@ const skills = [
 ];
 
 // Reusable stat card
-const StatCard = ({ number, label, color, delay }) => (
+type StatCardProps = {
+  number: string;
+  label: string;
+  color: string;
+  delay: number;
+};
+
+const StatCard = ({ number, label, color, delay }: StatCardProps) => (
   <motion.div
     className="glass-enhanced rounded-2xl p-4 sm:p-6 text-center relative overflow-hidden group cursor-pointer"
     initial={{ opacity: 0, y: 30, scale: 0.9 }}
@@ -97,10 +104,10 @@ export default function About() {
                     transition={{ delay: 0.6, duration: 0.6 }}
                   >
                     <p>
-                      I'm a passionate <span className="text-primary font-semibold">Frontend Engineer</span> with over 6 years of experience building scalable, performant web applications with React.js, TypeScript, and Next.js.
+                      I&apos;m a passionate <span className="text-primary font-semibold">Frontend Engineer</span> with over 6 years of experience building scalable, performant web applications with React.js, TypeScript, and Next.js.
                     </p>
                     <p>
-                      I've worked in <span className="text-secondary font-semibold">fintech, healthcare, construction, and retail</span>, delivering pixel-perfect UIs and complex real-time features.
+                      I&apos;ve worked in <span className="text-secondary font-semibold">fintech, healthcare, construction, and retail</span>, delivering pixel-perfect UIs and complex real-time features.
                     </p>
                   </motion.div>
                 </div>
