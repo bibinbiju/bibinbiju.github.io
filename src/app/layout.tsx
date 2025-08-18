@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bibin B - Senior Frontend Developer | React.js Specialist",
+  title: "Bibin Biju – Frontend Engineer | React.js • Next.js • TypeScript",
   description:
     "Senior Software Engineer with 6+ years of experience in React.js, TypeScript, Next.js, and Three.js. Building scalable web applications.",
   keywords: [
@@ -22,10 +22,11 @@ export const metadata: Metadata = {
     "Three.js",
   ],
   openGraph: {
-    title: "Bibin B - Senior Frontend Developer",
+    title: "Bibin Biju – Frontend Engineer | React.js • Next.js • TypeScript",
     description:
       "6+ years of experience in frontend development with React.js, TypeScript, and modern web technologies.",
     type: "website",
+    url: "https://bibinbiju.github.io",
   }
 };
 export const viewport: Viewport = {
