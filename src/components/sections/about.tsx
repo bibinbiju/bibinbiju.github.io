@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { MotionDiv,MotionH3} from "@/components/ui/motion";
 
 const stats = [
   { number: "6+", label: "Years Experience", color: "from-blue-500 to-cyan-500" },
@@ -24,7 +24,7 @@ type StatCardProps = {
 };
 
 const StatCard = ({ number, label, color, delay }: StatCardProps) => (
-  <motion.div
+  <MotionDiv
     className="glass-enhanced rounded-2xl p-4 sm:p-6 text-center relative overflow-hidden group cursor-pointer"
     initial={{ opacity: 0, y: 30, scale: 0.9 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -33,15 +33,15 @@ const StatCard = ({ number, label, color, delay }: StatCardProps) => (
     whileTap={{ scale: 0.95 }}
   >
     <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-20 transition-opacity`} />
-    <motion.div
+    <MotionDiv
       className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r ${color} bg-clip-text text-transparent`}
       animate={{ scale: [1, 1.1, 1] }}
       transition={{ duration: 3, repeat: Infinity, repeatDelay: 3 }}
     >
       {number}
-    </motion.div>
+    </MotionDiv>
     <div className="text-muted-foreground text-xs sm:text-sm font-medium">{label}</div>
-  </motion.div>
+  </MotionDiv>
 );
 
 export default function About() {
@@ -68,10 +68,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           {/* Profile & Content */}
           <ScrollReveal delay={0.2}>
-            <motion.div className="glass-enhanced rounded-3xl p-8 md:p-12 mb-8">
+            <MotionDiv className="glass-enhanced rounded-3xl p-8 md:p-12 mb-8">
               <div className="flex flex-col lg:flex-row items-center gap-12">
                 {/* Profile Image */}
-                <motion.div whileHover={{ scale: 1.05, rotateY: 10 }} transition={{ duration: 0.4 }}>
+                <MotionDiv whileHover={{ scale: 1.05, rotateY: 10 }} transition={{ duration: 0.4 }}>
                   <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl">
                     <Image
                       src="/images/profile.png"
@@ -80,24 +80,24 @@ export default function About() {
                       className="object-cover"
                     />
                   </div>
-                  <motion.div
+                  <MotionDiv
                     className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 blur-xl -z-10"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   />
-                </motion.div>
+                </MotionDiv>
 
                 {/* Text Content */}
                 <div className="flex-1 text-center lg:text-left">
-                  <motion.h3
+                  <MotionH3
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
                     initial={{ x: -30, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
                   >
                     About Me
-                  </motion.h3>
-                  <motion.div
+                  </MotionH3>
+                  <MotionDiv
                     className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed"
                     initial={{ x: -30, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -109,10 +109,10 @@ export default function About() {
                     <p>
                       I&apos;ve worked in <span className="text-secondary font-semibold">fintech, healthcare, construction, and retail</span>, delivering pixel-perfect UIs and complex real-time features.
                     </p>
-                  </motion.div>
+                  </MotionDiv>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           </ScrollReveal>
 
           {/* Stats */}
@@ -126,11 +126,11 @@ export default function About() {
 
           {/* Skills */}
           <ScrollReveal delay={0.6}>
-            <motion.div className="glass-enhanced rounded-3xl p-8 mt-8">
+            <MotionDiv className="glass-enhanced rounded-3xl p-8 mt-8">
               <h4 className="text-2xl font-bold text-center mb-8 text-primary">Core Specializations</h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {skills.map((item, i) => (
-                  <motion.div
+                  <MotionDiv
                     key={item.title}
                     className="text-center p-6 glass rounded-xl"
                     initial={{ opacity: 0, y: 20 }}
@@ -141,10 +141,10 @@ export default function About() {
                     <div className="text-4xl mb-4">{item.icon}</div>
                     <h5 className="text-lg font-semibold text-foreground mb-2">{item.title}</h5>
                     <p className="text-muted-foreground text-sm">{item.desc}</p>
-                  </motion.div>
+                  </MotionDiv>
                 ))}
               </div>
-            </motion.div>
+            </MotionDiv>
           </ScrollReveal>
         </div>
       </div>

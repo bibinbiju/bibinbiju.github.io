@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 // Optimized Inter font import
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     description:
       "6+ years of experience in frontend development with React.js, TypeScript, and modern web technologies.",
     type: "website",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
+  }
+};
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

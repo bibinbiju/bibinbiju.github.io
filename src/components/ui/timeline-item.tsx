@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+
+import { MotionDiv } from "./motion";
 
 interface TimelineItemProps {
   title: string;
@@ -11,7 +12,7 @@ interface TimelineItemProps {
 export default function TimelineItem({ title, company, period, description, isActive }: TimelineItemProps) {
   return (
     <div className="timeline-item relative mb-12">
-      <motion.div
+      <MotionDiv
         className={`timeline-dot ${isActive ? 'animate-glow' : ''}`}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

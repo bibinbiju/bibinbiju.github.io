@@ -1,4 +1,3 @@
-"use client";
 import Navigation from "@/components/ui/navigation";
 import FloatingElements from "@/components/ui/floating-elements";
 import Hero from "@/components/sections/hero";

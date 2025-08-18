@@ -1,5 +1,7 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import {  useInView } from "framer-motion";
+import { MotionDiv } from "./motion";
 
 interface SkillBarProps {
   name: string;
@@ -28,7 +30,7 @@ export default function SkillBar({ name, percentage, delay = 0 }: SkillBarProps)
         <span className="text-accent">{percentage}%</span>
       </div>
       <div className="bg-muted rounded-full h-3 overflow-hidden">
-        <motion.div
+        <MotionDiv
           className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
           initial={{ width: 0 }}
           animate={{ width: animateWidth ? `${percentage}%` : 0 }}

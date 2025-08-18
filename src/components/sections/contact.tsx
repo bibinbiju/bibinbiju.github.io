@@ -1,5 +1,5 @@
+"use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Linkedin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import Image from "next/image";
+import { MotionDiv } from "../ui/motion";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -104,7 +105,7 @@ export default function Contact() {
                 </h3>
                 <div className="space-y-6 flex-grow flex flex-col justify-center">
                   {contactInfo.map((item, index) => (
-                    <motion.div
+                    <MotionDiv
                       key={index}
                       className="flex items-center glass rounded-lg p-4"
                       initial={{ opacity: 0, x: -20 }}
@@ -121,7 +122,7 @@ export default function Contact() {
                           {item.value}
                         </div>
                       </div>
-                    </motion.div>
+                    </MotionDiv>
                   ))}
                 </div>
               </div>
@@ -187,7 +188,7 @@ export default function Contact() {
                     className="w-full glass py-4 rounded-xl hover:bg-primary/20 transition-all duration-300 transform hover:scale-105 animate-glow bg-transparent border-2 border-primary text-primary hover:text-primary-foreground hover:bg-primary mt-auto"
                   >
                     {isSubmitting ? (
-                      <motion.div
+                      <MotionDiv
                         animate={{ rotate: 360 }}
                         transition={{
                           duration: 1,
@@ -197,7 +198,7 @@ export default function Contact() {
                         className="mr-2"
                       >
                         <Send className="h-4 w-4" />
-                      </motion.div>
+                      </MotionDiv>
                     ) : (
                       <Send className="mr-2 h-4 w-4" />
                     )}

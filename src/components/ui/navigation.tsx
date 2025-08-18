@@ -1,7 +1,8 @@
+"use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
+import { MotionButton, MotionDiv, MotionNav } from "./motion";
 
 const navItems = [
   { href: "#home", label: "Home" },
@@ -46,7 +47,7 @@ export default function Navigation() {
   };
 
   return (
-    <motion.nav
+    <MotionNav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, type: "spring", damping: 20 }}
@@ -54,7 +55,7 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, type: "spring", damping: 15 }}
@@ -63,12 +64,12 @@ export default function Navigation() {
             whileTap={{ scale: 0.95 }}
           >
             Bibin B
-          </motion.div>
+          </MotionDiv>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item, index) => (
-              <motion.button
+              <MotionButton
                 key={item.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -83,19 +84,19 @@ export default function Navigation() {
                 whileTap={{ scale: 0.95 }}
               >
                 {activeSection === item.href.substring(1) && (
-                  <motion.div
+                  <MotionDiv
                     layoutId="navbar-indicator"
                     className="absolute inset-0 bg-primary/20 rounded-lg"
                     transition={{ type: "spring", damping: 20, stiffness: 300 }}
                   />
                 )}
                 <span className="relative z-10">{item.label}</span>
-              </motion.button>
+              </MotionButton>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
+          <MotionButton
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -103,12 +104,12 @@ export default function Navigation() {
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+          </MotionButton>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -127,9 +128,9 @@ export default function Navigation() {
                 </button>
               ))}
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </div>
-    </motion.nav>
+    </MotionNav>
   );
 }

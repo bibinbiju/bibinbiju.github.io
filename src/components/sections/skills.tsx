@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
 import { Code, Bolt } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import SkillBar from "@/components/ui/skill-bar";
 import { portfolioData } from "@/data/portfolio-data";
 import Image from "next/image";
+import { MotionDiv, MotionH3, MotionI } from "../ui/motion";
 
 export default function Skills() {
   return (
@@ -31,20 +31,20 @@ export default function Skills() {
           {/* Frontend Skills */}
           <ScrollReveal delay={0.2}>
             <div className="glass-enhanced rounded-xl p-6 sm:p-8 h-full">
-              <motion.h3
+              <MotionH3
                 className="text-2xl font-semibold mb-8 text-primary flex items-center"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                <motion.div
+                <MotionDiv
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 >
                   <Code className="mr-3" />
-                </motion.div>
+                </MotionDiv>
                 Frontend Development
-              </motion.h3>
+              </MotionH3>
               <div className="space-y-6">
                 {portfolioData.skills.frontend.map((skill, index) => (
                   <SkillBar
@@ -61,23 +61,23 @@ export default function Skills() {
           {/* Tools & Technologies */}
           <ScrollReveal delay={0.4}>
             <div className="glass-enhanced rounded-xl p-6 sm:p-8 h-full">
-              <motion.h3
+              <MotionH3
                 className="text-2xl font-semibold mb-8 text-secondary flex items-center"
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
-                <motion.div
+                <MotionDiv
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
                 >
                   <Bolt className="mr-3" />
-                </motion.div>
+                </MotionDiv>
                 Tools & Technologies
-              </motion.h3>
+              </MotionH3>
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                 {portfolioData.skills.tools.map((tool, index) => (
-                  <motion.div
+                  <MotionDiv
                     key={tool.name}
                     className="glass rounded-lg p-4 text-center hover:bg-primary/20 transition-all duration-500 transform cursor-pointer"
                     initial={{ opacity: 0, y: 30, scale: 0.8 }}
@@ -95,13 +95,13 @@ export default function Skills() {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <motion.i
+                    <MotionI
                       className={`${tool.icon} text-2xl ${tool.color} mb-2 block`}
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     />
                     <div className="text-sm font-medium">{tool.name}</div>
-                  </motion.div>
+                  </MotionDiv>
                 ))}
               </div>
             </div>

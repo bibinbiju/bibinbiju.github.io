@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+"use client";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MotionDiv, MotionImg, MotionSpan } from "./motion";
 
 interface Project {
   title: string;
@@ -16,7 +17,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <motion.div
+    <MotionDiv
       className="glass-enhanced rounded-xl overflow-hidden transition-all duration-500 h-full flex flex-col group"
       whileHover={{ y: -15, rotateY: 5, scale: 1.03 }}
       initial={{ opacity: 0, y: 50, rotateX: 10 }}
@@ -25,26 +26,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       style={{ transformStyle: "preserve-3d" }}
     >
       <div className="relative overflow-hidden">
-        <motion.img 
+        <MotionImg 
           src={project.image} 
           alt={project.title} 
           className="w-full h-48 object-cover transition-transform duration-500" 
           whileHover={{ scale: 1.15, rotate: 1 }}
         />
-        <motion.div 
+        <MotionDiv 
           className="absolute inset-0 bg-gradient-to-t from-black/60 via-primary/20 to-transparent"
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         />
-        <motion.div
+        <MotionDiv
           className="absolute top-4 right-4 w-8 h-8 bg-primary/80 rounded-full flex items-center justify-center"
           initial={{ scale: 0, rotate: -180 }}
           whileHover={{ scale: 1, rotate: 0 }}
           transition={{ duration: 0.3 }}
         >
           <ExternalLink className="h-4 w-4 text-white" />
-        </motion.div>
+        </MotionDiv>
       </div>
       
       <div className="p-4 sm:p-6 flex flex-col flex-grow">
@@ -55,7 +56,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         
         <div className="flex flex-wrap gap-2 mb-6">
           {project.technologies.map((tech, index) => (
-            <motion.span
+            <MotionSpan
               key={tech}
               className="glass px-3 py-1 text-xs rounded-full hover:bg-primary/20 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -65,11 +66,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               whileTap={{ scale: 0.95 }}
             >
               {tech}
-            </motion.span>
+            </MotionSpan>
           ))}
         </div>
         
-        <motion.div
+        <MotionDiv
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -81,7 +82,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               }
             }}
           >
-            <motion.div
+            <MotionDiv
               className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"
               initial={{ x: "-100%" }}
               whileHover={{ x: "100%" }}
@@ -90,8 +91,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <ExternalLink className="mr-2 h-4 w-4 group-hover:animate-bounce-slow" />
             View Project
           </Button>
-        </motion.div>
+        </MotionDiv>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }

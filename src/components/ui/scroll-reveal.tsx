@@ -1,5 +1,7 @@
+"use client";
 import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { useInView, useAnimation } from "framer-motion";
+import { MotionDiv } from "./motion";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -19,7 +21,7 @@ export default function ScrollReveal({ children, delay = 0, duration = 0.8 }: Sc
   }, [isInView, controls]);
 
   return (
-    <motion.div
+    <MotionDiv
       ref={ref}
       animate={controls}
       initial="hidden"
@@ -37,6 +39,6 @@ export default function ScrollReveal({ children, delay = 0, duration = 0.8 }: Sc
       }}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 }

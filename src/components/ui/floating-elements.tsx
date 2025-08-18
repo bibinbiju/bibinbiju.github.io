@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+"use client";
 import { useEffect, useState } from "react";
+import {  MotionDiv } from "./motion";
 
 interface FloatingElement {
   id: number;
@@ -53,7 +54,7 @@ export default function FloatingElements() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {elements.map((element) => (
-        <motion.div
+        <MotionDiv
           key={element.id}
           className={getShapeClasses(element.shape, element.color)}
           style={{
