@@ -40,6 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="rbqp_YZ0ijZbUS2UhVxLPmwQGmcmV-lwePFOaRp_8wc" />
       <body className={`${inter.variable} antialiased`}>
         {children}
         {/* Font Awesome external stylesheet */}

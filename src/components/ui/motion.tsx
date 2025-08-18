@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 // Export each motion component explicitly
 export const MotionDiv = motion.div;
@@ -16,3 +16,4 @@ export const MotionLi = motion.li;
 export const MotionA = motion.a;
 export const MotionI = motion.i;
 export const MotionNav = motion.nav;
+export { useInView, useAnimation };

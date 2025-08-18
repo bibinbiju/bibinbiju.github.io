@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import {  useInView } from "framer-motion";
-import { MotionDiv } from "./motion";
+import { MotionDiv,useInView } from "./motion";
 
 interface SkillBarProps {
   name: string;
