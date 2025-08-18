@@ -40,7 +40,7 @@ export default function Footer() {
             </MotionA>
             
             <MotionA
-              href="https://www.linkedin.com/in/bibin-b-biju-542583154"
+              href="https://www.linkedin.com/in/bibin-b-biju"
               target="_blank"
               rel="noopener noreferrer"
               className="glass w-12 h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"

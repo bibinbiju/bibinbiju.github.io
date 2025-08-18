@@ -65,7 +65,7 @@ export default function Contact() {
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "linkedin.com/in/bibin-b-biju-542583154",
+      value: "https://www.linkedin.com/in/bibin-b-biju",
       color: "text-primary",
     },
   ];

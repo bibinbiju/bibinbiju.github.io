@@ -120,7 +120,7 @@ vercel
 - 📍 Vakkom, Trivandrum, Kerala  
 - 📞 +91 9048778629  
 - 📧 bibinvakkom@gmail.com  
-- 🔗 [LinkedIn](https://linkedin.com/in/bibin-b-biju-542583154)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/bibin-b-biju)
 
 ---
 
