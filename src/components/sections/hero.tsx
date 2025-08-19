@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import Image from "next/image";
 import { MotionA, MotionDiv, MotionH1, MotionH2, MotionP } from "../ui/motion";
+import APP_ENV from "@/config/appEnv";
 
 export default function Hero() {
   const handleDownloadResume = () => {
@@ -160,7 +161,7 @@ export default function Hero() {
 
               <div className="flex space-x-4">
                 <MotionA
-                  href="mailto:bibinvakkom@gmail.com"
+                  href={APP_ENV.EMAIL_ID}
                   className="glass w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -169,7 +170,7 @@ export default function Hero() {
                 </MotionA>
 
                 <MotionA
-                  href="https://www.linkedin.com/in/bibin-b-biju"
+                  href={APP_ENV.LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"

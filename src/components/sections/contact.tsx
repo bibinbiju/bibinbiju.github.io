@@ -8,6 +8,8 @@ import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import Image from "next/image";
 import { MotionDiv } from "../ui/motion";
+import emailJs from "@emailjs/browser";
+import APP_ENV from "@/config/appEnv";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -31,16 +33,23 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    await emailJs.send(
+      APP_ENV.EMAILJS_SERVICE_ID,
+      APP_ENV.EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      APP_ENV.EMAILJS_PUBLIC_KEY
+    );
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for your message. I'll get back to you soon.",
+    });
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
@@ -59,13 +68,13 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "bibinvakkom@gmail.com",
+      value: APP_ENV.EMAIL_ID,
       color: "text-primary",
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "https://www.linkedin.com/in/bibin-b-biju",
+      value: APP_ENV.LINKEDIN_URL,
       color: "text-primary",
     },
   ];
@@ -89,8 +98,8 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Ready to bring your ideas to life? Let&apos;s discuss your next project
-              and create something amazing together.
+              Ready to bring your ideas to life? Let&apos;s discuss your next
+              project and create something amazing together.
             </p>
           </div>
         </ScrollReveal>

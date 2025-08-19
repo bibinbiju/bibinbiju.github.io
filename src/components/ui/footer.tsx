@@ -1,5 +1,6 @@
 import { Mail, Linkedin, Phone } from "lucide-react";
 import { MotionA, MotionDiv, MotionP } from "./motion";
+import APP_ENV from "@/config/appEnv";
 
 export default function Footer() {
   return (
@@ -31,7 +32,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <MotionA
-              href="mailto:bibinvakkom@gmail.com"
+              href={APP_ENV.EMAIL_ID}
               className="glass w-12 h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -40,7 +41,7 @@ export default function Footer() {
             </MotionA>
             
             <MotionA
-              href="https://www.linkedin.com/in/bibin-b-biju"
+              href={APP_ENV.LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="glass w-12 h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"

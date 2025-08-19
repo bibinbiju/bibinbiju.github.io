@@ -1,6 +1,8 @@
+import {ToastProvider, ToastViewport } from "@/components/ui/toast";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
 
 // Optimized Inter font import
 const inter = Inter({
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
       "6+ years of experience in frontend development with React.js, TypeScript, and modern web technologies.",
     type: "website",
     url: "https://bibinbiju.github.io",
-  }
+  },
 };
 export const viewport: Viewport = {
   width: "device-width",
@@ -49,6 +51,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         />
+        <Toaster/>
       </body>
     </html>
   );
