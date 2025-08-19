@@ -78,10 +78,12 @@ jobs:
           echo "NEXT_PUBLIC_EMAILJS_SERVICE_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}" >> .env
           echo "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}" >> .env
           echo "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}" >> .env
-          echo "NEXT_PUBLIC_EMAIL_ID=${{ secrets.NEXT_PUBLIC_EMAIL_ID }}" >> .env
+          echo "NEXT_PUBLIC_EMAIL_ID=${{ secrets.NEXT_PUBLIC_EMAIL_ID }}hvjhvjvjvjvj" >> .env
           echo "NEXT_PUBLIC_LINKEDIN_URL=${{ secrets.NEXT_PUBLIC_LINKEDIN_URL }}" >> .env
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          NEXT_PUBLIC_EMAIL_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_ID }}hjkhjkhkjhkjhkjhkj
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
