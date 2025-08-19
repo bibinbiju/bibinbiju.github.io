@@ -76,19 +76,19 @@ jobs:
       - name: Debug vars
         run: |
           echo "Vars available in this job:"
-          echo "SERVICE_ID=${{ vars.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}"
-          echo "TEMPLATE_ID=${{ vars.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}"
-          echo "PUBLIC_KEY=${{ vars.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}"
-          echo "EMAIL_ID=${{ vars.NEXT_PUBLIC_EMAIL_ID }}"
-          echo "LINKEDIN_URL=${{ vars.NEXT_PUBLIC_LINKEDIN_URL }}"
+          echo "SERVICE_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}"
+          echo "TEMPLATE_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}"
+          echo "PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}"
+          echo "EMAIL_ID=${{ secrets.NEXT_PUBLIC_EMAIL_ID }}"
+          echo "LINKEDIN_URL=${{ secrets.NEXT_PUBLIC_LINKEDIN_URL }}"
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
-          NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ vars.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
-          NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ vars.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
-          NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ vars.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
-          NEXT_PUBLIC_EMAIL_ID: ${{ vars.NEXT_PUBLIC_EMAIL_ID }}
-          NEXT_PUBLIC_LINKEDIN_URL: ${{ vars.NEXT_PUBLIC_LINKEDIN_URL }}
+          NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+          NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
+          NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
+          NEXT_PUBLIC_EMAIL_ID: ${{ secrets.NEXT_PUBLIC_EMAIL_ID }}
+          NEXT_PUBLIC_LINKEDIN_URL: ${{ secrets.NEXT_PUBLIC_LINKEDIN_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
