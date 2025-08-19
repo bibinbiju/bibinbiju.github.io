@@ -161,7 +161,7 @@ export default function Hero() {
 
               <div className="flex space-x-4">
                 <MotionA
-                  href={APP_ENV.EMAIL_ID}
+                  href={`mailto:${APP_ENV.EMAIL_ID}`}
                   className="glass w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}

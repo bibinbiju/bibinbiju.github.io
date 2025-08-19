@@ -32,7 +32,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <MotionA
-              href={APP_ENV.EMAIL_ID}
+              href={`mailto:${APP_ENV.EMAIL_ID}`}
               className="glass w-12 h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
